@@ -1,1 +1,1 @@
-# jenkins-freestyle-project
+# SonarQube integration in jenkins
