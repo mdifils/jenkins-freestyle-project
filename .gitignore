@@ -1,4 +1,3 @@
 target/*
 !target/*.jar
 .mvn/wrapper/maven-wrapper.jar
-start-jenkins.sh
