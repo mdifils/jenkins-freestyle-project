@@ -8,18 +8,15 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn clean package'
-                sh 'git version || true'
-                sh 'docker version || true'
-                sh 'docker compose || true'
-                sh 'mvn --version || true'
-                sh 'java -version || true'
             }
         }
-        // stage('Sonar Analysis') {
-        //     steps {
-        //         sh 'mvn test'
-        //     }
-        // }
+        stage('Sonar Analysis') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'mvn sonar:sonar'
+                }
+            }
+        }
         // stage('Release') {
         //     steps {
         //         withCredentials([string(credentialsId: 'github-token', variable: 'TOKEN')]){
