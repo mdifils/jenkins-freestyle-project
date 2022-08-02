@@ -3,9 +3,6 @@ pipeline {
     tools {
         maven 'maven-3.8.6'
     }
-    // environment {
-    //     REPO = "mdifils/jenkins-pipeline"
-    // }
 
     stages {
         stage('build') {
